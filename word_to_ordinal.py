@@ -16,8 +16,10 @@ amount_found_solutions = 0
 
 def take_short(element):
     return element["short"]
+
 def take_short_len(element):
     return len(element["short"])
+
 def init():
     with open("periodic.csv", newline="\n") as elementFile:
         csv_reader = csv.reader(elementFile)
@@ -32,9 +34,6 @@ def init():
         all_elements.sort(key=take_short)
         global target_word
         target_word  = sys.argv[1].lower().replace(" ","")
-
-# def get_next_options():
-
 
 def convert_to_number(remaining_target,previous_elements):
     #Check if finished
@@ -53,7 +52,7 @@ def convert_to_number(remaining_target,previous_elements):
         global amount_found_solutions
         amount_found_solutions += 1
         return
-
+    
     #get possible next steps
     remaining_possibilities = []
     for element in all_elements:
